@@ -11,7 +11,7 @@ services:
       # - ./example_browserclient:/app/example_browserclient
       - cache:/root/.cache
     ports:
-      - "9001:9001"
+      - "9021:9021"
 
     # if 'gpu' target
     # deploy:
