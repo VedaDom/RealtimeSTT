@@ -1,8 +1,9 @@
 services:
   rtstt:
+    user: root
     build:
       context: .
-      target: gpu # or cpu
+      target: cpu
     image: rtstt
     container_name: rtstt
     volumes:
@@ -13,11 +14,11 @@ services:
       - "9001:9001"
 
     # if 'gpu' target
-    deploy:
-      resources:
-        reservations:
-          devices:
-          - capabilities: ["gpu"]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #       - capabilities: ["gpu"]
   nginx:
     image: nginx:latest
     container_name: nginx_web
